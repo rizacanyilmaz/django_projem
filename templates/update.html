@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div class="jumbotron text-center">
+<h3>Makale Güncelle</h3>
+<hr>
+<div class="container">
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.media }} {{ form |crispy }}
+    <br>
+    <button type="submit" class="btn btn-danger">Güncelle</button>
+</form>
+</div>
+{% endblock body %}
